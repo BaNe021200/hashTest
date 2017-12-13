@@ -5,10 +5,10 @@ authentification.php
 authentificationForm.php
 cryptPass.php
 cryptPassForm.php
-errorPage.php
+!errorPage.php
 pass.php
 passForm.php
-Manager.php
-MonException.php
-veriTest2.php
+!Manager.php
+!MonException.php
+!veriTest2.php
 

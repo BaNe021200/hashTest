@@ -4,7 +4,7 @@ require ('model/Manager.php');
 //use PDO;
 use model\Manager;
 
-function authenticator(){
+try {
 
     $Mdp = $_POST['passWord'];
     $login = $_POST['pseudo'];
@@ -22,8 +22,10 @@ function authenticator(){
     $hashedPass = $pdoStat->fetch();
 //var_dump($hashedPass['pass']);die;
     $verifyPass = $hashedPass['pass'];
-   // $authentic =password_verify($Mdp, $verifyPass);
-    if(password_verify($Mdp, $verifyPass)){
+
+
+
+if(password_verify($Mdp, $verifyPass)){
         session_start();
         $_SESSION['login']=$login;
 
@@ -31,23 +33,21 @@ function authenticator(){
         require ('home.php');
     }else
     {
-       throw new MonException ('mauvais identifiant ou mot de passe');
+        throw new MonException ('mauvais identifiant ou mot de passe');
 
     }
 
-    //return $authentic;
-}
 
-
-
-try {
-    authenticator();
-}
+ }
 catch (MonException $e){
 
     $errorMessage=$e;
     require_once 'errorPage.php';
 }
+
+
+
+
 
 
 

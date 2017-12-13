@@ -11,7 +11,7 @@
 <body>
 <h1>Entrez votre mot de passe</h1>
 
-<form action="veriTest.php" method="post">
+<form action="veriTest2.php" method="post">
 
     <label for="pseudo">pseudo</label>
     <p><input type="text" name="pseudo"></p>
